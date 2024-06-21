@@ -39,3 +39,10 @@ all:
           inventory_user: admin
           inventory_pass: password
 ```
+
+## Prerequisite
+Ansible ansible-pylibssh modules must be installed before running the script.
+```bash
+pip install ansible-pylibssh
+```
+
