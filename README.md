@@ -49,8 +49,9 @@ pip install ansible-pylibssh
 ## Usage:
 ```bash
 
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vault_pass.yaml -i inventory-vault.yaml xpnetworks_cisco-asa-command.yml --extra-vars="asa_device=ciscoasa" --extra-vars="ha_type=standalone" --extra-vars="asa_type=vpn"
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vault_pass.yaml -i inventory-vault.yaml cisco-asa-run_command.yml --extra-vars="asa_device=ciscoasa1" --extra-vars="ha_type=standalone" --extra-vars="asa_type=vpn"
 ```
 
 **_NOTE:_**  `output` folder must be created before running the script.
 
+## Variables
