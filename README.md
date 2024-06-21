@@ -55,3 +55,8 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
 **_NOTE:_**  `output` folder must be created before running the script.
 
 ## Variables
+- `asa_device` variable shows which Cisco ASA device/devices will be connected.The value can be "ciscoasa1", "ciscoasa2" or "v" as per the example inventory file above.
+- `ha_type` variable shows whether to retrieve UCS backup file. If the value is "true", the Ansible script will take UCS backup and Master Key files and copy these files into "output" folder.
+- `asa_type` variable shows whether to retrieve the running configuration of the F5 device. If the value is "true", the script will copy the running configuration into "output" folder.
+
+- 
