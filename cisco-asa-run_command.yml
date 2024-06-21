@@ -1,0 +1,38 @@
+- name: PLAY 1 - CISCO ASA Run Command
+  hosts: "{{ asa_device }}"
+  connection: ansible.netcommon.network_cli
+  gather_facts: true
+  vars:
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_network_os: "{{ inventory_network_os }}"
+    ansible_become: true
+    ansible_become_method: enable
+    ansible_host: "{{ inventory_host }}"
+    ansible_user: "{{ inventory_user }}"
+    ansible_password: "{{ inventory_pass }}"
+    ansible_command_timeout: 60
+    #command: "show ip"
+    #command: "show vpn-sessiondb anyconnect |\ i Username"
+    #command: "show running-config object-group id DENY-LIST-BANNED-IP-RANGES"
+    command: "show version"
+    #command: "show tech-support"
+    #command: "show running-config object-group id DENY-LIST-BANNED-IP-RANGES"
+    #command: "show memory region |\ include lina"
+    #command: "show asp table socket |\ include SSL"
+    #command: "show running-config http"
+    #command: "show running-config webvpn"
+    filename_command: "{{ command | replace (' ','_') }}"
+    backup_file_name: "{{ inventory_hostname }}-{{ ansible_date_time.date }}-{{ ansible_date_time.hour }}-{{ ansible_date_time.minute }}-{{ ansible_date_time.second }}-{{ filename_command }}"
+  tasks:
+    - name: 01- Run {{ command }} if the device is Cisco ASA and HA Type {{ ha_type }}
+      cisco.asa.asa_command:
+        commands:
+          -  "{{ command }}"
+        passwords: true
+        interval: 1
+        retries: 10
+      register: output
+      when: ansible_network_os == 'cisco.asa.asa' and ( inventory_network_cisco_asa_ha_type == ha_type or ha_type == 'any' ) and ( inventory_network_cisco_asa_type == asa_type or asa_type == 'any' )
+    - name: 02- copy {{ command }} output to file if the device is Cisco ASA and HA Type {{ ha_type }}
+      copy: content="{{ output.stdout[0] }}\n" dest=./output/{{ backup_file_name }}.txt
+      when: ansible_network_os == 'cisco.asa.asa' and ( inventory_network_cisco_asa_ha_type == ha_type or ha_type == 'any' ) and ( inventory_network_cisco_asa_type == asa_type or asa_type == 'any' )

@@ -1,0 +1,61 @@
+Cisco Adaptive Security Appliance Software Version 9.18(4)24 
+SSP Operating System Version 2.12(1.74)
+Device Manager Version 7.19(1)95
+REST API Agent Version 7.17.1.160
+
+Compiled on Wed 17-Apr-24 18:53 GMT by builders
+System image file is "boot:/asa9184-24-smp-k8.bin"
+Config file at boot was "startup-config"
+
+ciscoasa1 up 2 hours 39 mins
+Start-up time 11 secs
+
+Hardware:   ASAv, 2048 MB RAM, CPU Clarkdale 1992 MHz,
+Internal ATA Compact Flash, 1024MB
+Slot 1: ATA Compact Flash, 8192MB
+BIOS Flash Firmware Hub @ 0x1, 0KB
+
+
+ 0: Ext: Management0/0       : address is 000c.2929.66cc, irq 10
+ 1: Ext: GigabitEthernet0/0  : address is 000c.2929.66d6, irq 7
+ 2: Ext: GigabitEthernet0/1  : address is 000c.2929.66e0, irq 9
+ 3: Ext: GigabitEthernet0/2  : address is 000c.2929.66ea, irq 11
+ 4: Ext: GigabitEthernet0/3  : address is 000c.2929.66f4, irq 10
+ 5: Ext: GigabitEthernet0/4  : address is 000c.2929.66fe, irq 7
+ 6: Ext: GigabitEthernet0/5  : address is 000c.2929.6608, irq 9
+ 7: Ext: GigabitEthernet0/6  : address is 000c.2929.6612, irq 11
+ 8: Ext: GigabitEthernet0/7  : address is 000c.2929.661c, irq 10
+ 9: Ext: GigabitEthernet0/8  : address is 000c.2929.6626, irq 7
+10: Int: Internal-Data0/0    : address is 0000.0100.0001, irq 0
+
+License mode: Smart Licensing
+ASAv Platform License State: Unlicensed
+No active entitlement: no feature tier and no throughput level configured
+Firewall throughput limited to 100 Kbps
+
+Licensed features for this platform:
+Maximum VLANs                     : 50             
+Inside Hosts                      : Unlimited      
+Failover                          : Active/Active  
+Encryption-DES                    : Enabled        
+Encryption-3DES-AES               : Enabled        
+Security Contexts                 : 2              
+Carrier                           : Disabled       
+AnyConnect Premium Peers          : 2              
+AnyConnect Essentials             : Disabled       
+Other VPN Peers                   : 250            
+Total VPN Peers                   : 250            
+AnyConnect for Mobile             : Disabled       
+AnyConnect for Cisco VPN Phone    : Disabled       
+Advanced Endpoint Assessment      : Disabled       
+Shared License                    : Disabled       
+Total TLS Proxy Sessions          : 2              
+Botnet Traffic Filter             : Enabled        
+Cluster                           : Enabled        
+
+Serial Number: 9A9841LNBBK
+
+Image type          : Release
+Key version         : A
+
+Configuration has not been modified since last system restart.
